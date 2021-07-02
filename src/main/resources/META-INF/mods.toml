@@ -1,0 +1,11 @@
+modLoader="javafml"
+loaderVersion="[34,)"
+license="All rights reserved"
+[[mods]] #mandatory
+modId="meteorrandomidea"
+version="${file.jarVersion}" 
+displayName="MeteorRandomIdea"
+authors="ExtraMeteorP"
+description='''
+none
+'''
