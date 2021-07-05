@@ -29,6 +29,7 @@ public class ClientProxy implements IProxy {
         RenderingRegistry.registerEntityRenderingHandler(ModEntities.PHANTOMSWORD, RenderPhantomSword::new);
         RenderingRegistry.registerEntityRenderingHandler(ModEntities.FLAMESCIONSLASH, RenderFlamescionSlash::new);
         RenderingRegistry.registerEntityRenderingHandler(ModEntities.SRENGTHENSLASH, RenderStrengthenSlash::new);
+        RenderingRegistry.registerEntityRenderingHandler(ModEntities.PAIMON, RenderPaimon::new);
     }
 
     public void onClientSetUpEvent(FMLClientSetupEvent event) {

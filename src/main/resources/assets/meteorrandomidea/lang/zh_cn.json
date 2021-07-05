@@ -4,7 +4,36 @@
 	"item.meteorrandomidea.firstfractal":"最初分型",
 	"item.meteorrandomidea.cosmiccarkey":"宇宙车钥匙",
 	"item.meteorrandomidea.gemofconquest":"征服宝石",
-	"item.meteorrandomidea.motor":"重装摩托"
+	"item.meteorrandomidea.motor":"重装摩托",
+	"item.meteorrandomidea.paimonmedal":"派蒙勋章",
+	
+	"meteorrandomidea.subtitle.cyclone":"重装摩托：蓄力攻击",
+	"meteorrandomidea.subtitle.shoot":"重装摩托：真理之钥",
+	"meteorrandomidea.subtitle.rideon":"重装摩托：骑乘",
 
+	"meteorrandomidea.subtitle.slash":"心斩",
+	
+	"meteorrandomidea.subtitle.paimon_0":"派蒙登场",
+	"meteorrandomidea.subtitle.paimon_spawn_0":"派蒙登场",
+	"meteorrandomidea.subtitle.paimon_1":"派蒙说话",
+	"meteorrandomidea.subtitle.paimon_2":"派蒙嘀咕",
+	"meteorrandomidea.subtitle.paimon_3":"派蒙感叹",
+	"meteorrandomidea.subtitle.paimon_4":"派蒙感叹",
+	"meteorrandomidea.subtitle.paimon_5":"派蒙询问",
+	"meteorrandomidea.subtitle.paimon_6":"派蒙漫谈",
+	"meteorrandomidea.subtitle.paimon_7":"派蒙漫谈",
+	"meteorrandomidea.subtitle.paimon_8":"派蒙叹气",
+	"meteorrandomidea.subtitle.paimon_9":"派蒙提问",
+	"meteorrandomidea.subtitle.paimon_10":"派蒙丧气",
+	"meteorrandomidea.subtitle.paimon_vanish_0":"派蒙消失",
+	"meteorrandomidea.subtitle.paimon_vanish_1":"派蒙消失",
+	"meteorrandomidea.subtitle.paimon_vanish_2":"派蒙消失",
+	"meteorrandomidea.subtitle.paimon_vanish_3":"派蒙消失",
+	"meteorrandomidea.subtitle.paimon_vanish_4":"派蒙消失",
+	"meteorrandomidea.subtitle.paimon_vanish_5":"派蒙消失",
+	"meteorrandomidea.subtitle.paimon_vanish_6":"派蒙消失",
+	"meteorrandomidea.subtitle.paimon_tp_0":"派蒙传送",
+	"meteorrandomidea.subtitle.paimon_tp_1":"派蒙传送",
+	"meteorrandomidea.subtitle.paimon_tp_2":"派蒙传送"
 
 }

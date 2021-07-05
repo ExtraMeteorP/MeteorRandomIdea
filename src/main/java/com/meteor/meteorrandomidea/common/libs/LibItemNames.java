@@ -7,5 +7,6 @@ public class LibItemNames {
     public static final String COSMICCARKEY = "cosmiccarkey";
     public static final String FIRSTFRACTAL = "firstfractal";
     public static final String FLAMESCIONWEAPON = "flamescionweapon";
+    public static final String PAIMONMEDAL = "paimonmedal";
 
 }

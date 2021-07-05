@@ -1,9 +1,10 @@
 package com.meteor.meteorrandomidea;
 
 import com.meteor.meteorrandomidea.client.ClientProxy;
-import com.meteor.meteorrandomidea.common.HonkaiImpactGroup;
+import com.meteor.meteorrandomidea.common.MeteorRandomIdeaGroup;
 import com.meteor.meteorrandomidea.common.ServerProxy;
 import com.meteor.meteorrandomidea.common.capability.CapabilityHandler;
+import com.meteor.meteorrandomidea.common.core.EquipmentHandler;
 import com.meteor.meteorrandomidea.common.core.IProxy;
 import com.meteor.meteorrandomidea.common.core.ModSounds;
 import com.meteor.meteorrandomidea.common.entities.ModEntities;
@@ -29,7 +30,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 @Mod(LibMisc.MOD_ID)
 public class MeteorRandomIdea {
 
-    public static ItemGroup itemGroup = new HonkaiImpactGroup();
+    public static ItemGroup itemGroup = new MeteorRandomIdeaGroup();
 
     public static IProxy proxy;
 
@@ -64,6 +65,7 @@ public class MeteorRandomIdea {
     private void commonSetup(FMLCommonSetupEvent event) {
         curiosLoaded = ModList.get().isLoaded("curios");
         CapabilityHandler.register();
+        EquipmentHandler.init();
     }
 
 }

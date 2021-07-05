@@ -1,6 +1,29 @@
 {
-	"cyclone": { "sounds":["honkaiimpact:cyclone"], "subtitle": "honkaiimpact.subtitle.cyclone" },
-	"shoot": { "sounds":["honkaiimpact:shoot"], "subtitle": "honkaiimpact.subtitle.shoot" },
-	"slash": { "sounds":["honkaiimpact:slash"], "subtitle": "honkaiimpact.subtitle.slash" },
-	"rideon": { "sounds":["honkaiimpact:rideon"], "subtitle": "honkaiimpact.subtitle.rideon" }
+	"cyclone": { "sounds":["meteorrandomidea:cyclone"], "subtitle": "meteorrandomidea.subtitle.cyclone" },
+	"shoot": { "sounds":["meteorrandomidea:shoot"], "subtitle": "meteorrandomidea.subtitle.shoot" },
+	"slash": { "sounds":["meteorrandomidea:slash"], "subtitle": "meteorrandomidea.subtitle.slash" },
+	"rideon": { "sounds":["meteorrandomidea:rideon"], "subtitle": "meteorrandomidea.subtitle.rideon" },
+	"paimon_0": { "sounds":["meteorrandomidea:paimon_0"], "subtitle": "meteorrandomidea.subtitle.paimon_0" },
+	"paimon_1": { "sounds":["meteorrandomidea:paimon_1"], "subtitle": "meteorrandomidea.subtitle.paimon_1" },
+	"paimon_2": { "sounds":["meteorrandomidea:paimon_2"], "subtitle": "meteorrandomidea.subtitle.paimon_2" },
+	"paimon_3": { "sounds":["meteorrandomidea:paimon_3"], "subtitle": "meteorrandomidea.subtitle.paimon_3" },
+	"paimon_4": { "sounds":["meteorrandomidea:paimon_4"], "subtitle": "meteorrandomidea.subtitle.paimon_4" },
+	"paimon_5": { "sounds":["meteorrandomidea:paimon_5"], "subtitle": "meteorrandomidea.subtitle.paimon_5" },
+	"paimon_6": { "sounds":["meteorrandomidea:paimon_6"], "subtitle": "meteorrandomidea.subtitle.paimon_6" },
+	"paimon_7": { "sounds":["meteorrandomidea:paimon_7"], "subtitle": "meteorrandomidea.subtitle.paimon_7" },
+	"paimon_8": { "sounds":["meteorrandomidea:paimon_8"], "subtitle": "meteorrandomidea.subtitle.paimon_8" },
+	"paimon_9": { "sounds":["meteorrandomidea:paimon_9"], "subtitle": "meteorrandomidea.subtitle.paimon_9" },
+	"paimon_10": { "sounds":["meteorrandomidea:paimon_10"], "subtitle": "meteorrandomidea.subtitle.paimon_10" },
+	"paimon_tp_0": { "sounds":["meteorrandomidea:paimon_tp_0"], "subtitle": "meteorrandomidea.subtitle.paimon_tp_0" },
+	"paimon_tp_1": { "sounds":["meteorrandomidea:paimon_tp_1"], "subtitle": "meteorrandomidea.subtitle.paimon_tp_1" },
+	"paimon_tp_2": { "sounds":["meteorrandomidea:paimon_tp_2"], "subtitle": "meteorrandomidea.subtitle.paimon_tp_2" },
+	"paimon_vanish_0": { "sounds":["meteorrandomidea:paimon_vanish_0"], "subtitle": "meteorrandomidea.subtitle.paimon_vanish_0" },
+	"paimon_vanish_1": { "sounds":["meteorrandomidea:paimon_vanish_1"], "subtitle": "meteorrandomidea.subtitle.paimon_vanish_1" },
+	"paimon_vanish_2": { "sounds":["meteorrandomidea:paimon_vanish_2"], "subtitle": "meteorrandomidea.subtitle.paimon_vanish_2" },
+	"paimon_vanish_3": { "sounds":["meteorrandomidea:paimon_vanish_3"], "subtitle": "meteorrandomidea.subtitle.paimon_vanish_3" },
+	"paimon_vanish_4": { "sounds":["meteorrandomidea:paimon_vanish_4"], "subtitle": "meteorrandomidea.subtitle.paimon_vanish_4" },
+	"paimon_vanish_5": { "sounds":["meteorrandomidea:paimon_vanish_5"], "subtitle": "meteorrandomidea.subtitle.paimon_vanish_5" },
+	"paimon_vanish_6": { "sounds":["meteorrandomidea:paimon_vanish_6"], "subtitle": "meteorrandomidea.subtitle.paimon_vanish_6" },
+	"paimon_spawn_0": { "sounds":["meteorrandomidea:paimon_spawn_0"], "subtitle": "meteorrandomidea.subtitle.paimon_spawn_0" }
+
 }

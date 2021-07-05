@@ -9,6 +9,7 @@ public class LibEntityNames {
     public static final String PHANTONSWORD = "phantonsword";
     public static final String FLAMESCIONSLASH = "flamescionslash";
     public static final String STRENGTHENSLASH = "strengthenslash";
+    public static final String PAIMON = "paimon";
     public static final String VOID = "void";
 
 }

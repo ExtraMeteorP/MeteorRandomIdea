@@ -1,15 +1,11 @@
 package com.meteor.meteorrandomidea.common.entities;
 
-import com.meteor.meteorrandomidea.common.core.ModSounds;
-import com.meteor.meteorrandomidea.common.handler.HerrscherHandler;
 import com.meteor.meteorrandomidea.common.items.ModItems;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.item.BoatEntity;
-import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.nbt.CompoundNBT;
@@ -17,7 +13,6 @@ import net.minecraft.network.IPacket;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.particles.ParticleTypes;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -163,7 +158,7 @@ public class EntityUfo extends BoatEntity {
         }
     }
 
-    public float getRotationFromVector(float rot, Vector3d vec){
+    public static float getRotationFromVector(float rot, Vector3d vec){
         double f2 = vec.z;
         double f3 = vec.x;
         double f12 = Math.asin(f3);

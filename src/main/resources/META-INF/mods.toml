@@ -9,3 +9,10 @@ authors="ExtraMeteorP"
 description='''
 none
 '''
+
+[[dependencies.meteorrandomidea]]
+    modId="curios"
+    mandatory=true
+    versionRange="[FORGE-1.16.2-2.0,)"
+    ordering="AFTER"
+    side="BOTH"

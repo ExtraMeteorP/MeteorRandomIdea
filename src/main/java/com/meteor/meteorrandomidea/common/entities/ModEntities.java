@@ -67,6 +67,14 @@ public class ModEntities {
             .setShouldReceiveVelocityUpdates(true)
             .build("");
 
+    public static final EntityType<EntityPaimon> PAIMON = EntityType.Builder.<EntityPaimon>create(
+            EntityPaimon::new, EntityClassification.MISC)
+            .size(0.6F, 0.8F)
+            .setUpdateInterval(10)
+            .setTrackingRange(64)
+            .setShouldReceiveVelocityUpdates(true)
+            .build("");
+
     public static void registerEntities(RegistryEvent.Register<EntityType<?>> evt) {
         IForgeRegistry<EntityType<?>> r = evt.getRegistry();
         register(r, LibEntityNames.KEYOFTRUTH, KEY_OF_TRUTH);
@@ -76,6 +84,7 @@ public class ModEntities {
         register(r, LibEntityNames.PHANTONSWORD, PHANTOMSWORD);
         register(r, LibEntityNames.FLAMESCIONSLASH, FLAMESCIONSLASH);
         register(r, LibEntityNames.STRENGTHENSLASH, SRENGTHENSLASH);
+        register(r, LibEntityNames.PAIMON, PAIMON);
     }
 
     public static <V extends IForgeRegistryEntry<V>> void register(IForgeRegistry<V> reg, ResourceLocation name, IForgeRegistryEntry<V> thing) {

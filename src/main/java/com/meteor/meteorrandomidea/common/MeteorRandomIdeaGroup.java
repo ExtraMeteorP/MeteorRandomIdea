@@ -5,9 +5,9 @@ import com.meteor.meteorrandomidea.common.libs.LibMisc;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
-public class HonkaiImpactGroup extends ItemGroup {
+public class MeteorRandomIdeaGroup extends ItemGroup {
 
-    public HonkaiImpactGroup() {
+    public MeteorRandomIdeaGroup() {
         super(LibMisc.MOD_ID);
     }
 

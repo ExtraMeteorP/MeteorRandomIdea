@@ -15,6 +15,7 @@ public class ModItems {
     public static final Item firstfractal = new ItemFirstFractal();
     public static final Item cosmiccarkey = new ItemCosmicCarKey();
     public static final Item flamescionweapon = new ItemFlamescionWeapon();
+    public static final Item paimonmedal = new ItemPaimonMedal();
 
     public static void registerItems(RegistryEvent.Register<Item> evt) {
         IForgeRegistry<Item> r = evt.getRegistry();
@@ -23,6 +24,7 @@ public class ModItems {
         register(r, LibItemNames.FIRSTFRACTAL, firstfractal);
         register(r, LibItemNames.COSMICCARKEY, cosmiccarkey);
         register(r, LibItemNames.FLAMESCIONWEAPON, flamescionweapon);
+        register(r, LibItemNames.PAIMONMEDAL, paimonmedal);
     }
 
     public static <V extends IForgeRegistryEntry<V>> void register(IForgeRegistry<V> reg, ResourceLocation name, IForgeRegistryEntry<V> thing) {
