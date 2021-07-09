@@ -70,10 +70,12 @@ public class ClientProxy implements IProxy {
         render = skinMap.get("default");
 
         render.addLayer(new LayerHerrscher(render));
+        render.addLayer(new LayerFlamescion(render));
 
         render = skinMap.get("slim");
 
         render.addLayer(new LayerHerrscher(render));
+        render.addLayer(new LayerFlamescion(render));
     }
 
 }

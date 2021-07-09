@@ -13,12 +13,14 @@ public class MiscellaneousIcons {
 
     public final IBakedModel[] firstFractalWeaponModels = new IBakedModel[10];
     public final IBakedModel[] strengthenSlashModel = new IBakedModel[1];
+    public final IBakedModel[] flamescionringModel = new IBakedModel[1];
 
     public void onModelRegister(ModelRegistryEvent evt) {
         for (int i = 0; i < 10; i++) {
             ModelLoader.addSpecialModel(new ResourceLocation(LibMisc.MOD_ID,"icon/sworddomain_" + i));
         }
         ModelLoader.addSpecialModel(new ResourceLocation(LibMisc.MOD_ID,"icon/strengthenslash"));
+        ModelLoader.addSpecialModel(new ResourceLocation(LibMisc.MOD_ID,"icon/flamescionring"));
     }
 
     public void onModelBake(ModelBakeEvent evt) {
@@ -26,6 +28,7 @@ public class MiscellaneousIcons {
             firstFractalWeaponModels[i] = evt.getModelRegistry().get(new ResourceLocation(LibMisc.MOD_ID, "icon/sworddomain_" + i));
         }
         strengthenSlashModel[0] = evt.getModelRegistry().get(new ResourceLocation(LibMisc.MOD_ID, "icon/strengthenslash"));
+        flamescionringModel[0] = evt.getModelRegistry().get(new ResourceLocation(LibMisc.MOD_ID, "icon/flamescionring"));
     }
 
 }

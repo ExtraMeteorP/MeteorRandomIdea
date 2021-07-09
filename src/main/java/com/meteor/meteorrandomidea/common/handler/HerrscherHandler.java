@@ -2,6 +2,8 @@ package com.meteor.meteorrandomidea.common.handler;
 
 import com.meteor.meteorrandomidea.common.capability.CapabilityHandler;
 import com.meteor.meteorrandomidea.common.capability.IHerrscherEnergy;
+import com.meteor.meteorrandomidea.common.core.EquipmentHandler;
+import com.meteor.meteorrandomidea.common.items.ModItems;
 import com.meteor.meteorrandomidea.common.network.HerrscherEnergyUpdatePack;
 import com.meteor.meteorrandomidea.common.network.HerrscherSkillPack;
 import com.meteor.meteorrandomidea.common.network.NetworkHandler;
@@ -129,7 +131,7 @@ public class HerrscherHandler {
     }
 
     public static boolean isHerrscherOfThunder(PlayerEntity player){
-        return false;
+        return !EquipmentHandler.findOrEmpty(ModItems.gemofconquest, player).isEmpty();
     }
 
 }

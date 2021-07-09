@@ -2,6 +2,7 @@ package com.meteor.meteorrandomidea.client;
 
 import com.meteor.meteorrandomidea.client.model.ModelHerrscher;
 import com.meteor.meteorrandomidea.common.handler.HerrscherHandler;
+import com.meteor.meteorrandomidea.common.items.ModItems;
 import com.meteor.meteorrandomidea.common.libs.LibMisc;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -11,8 +12,11 @@ import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.entity.IEntityRenderer;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
 import net.minecraft.client.renderer.entity.model.PlayerModel;
+import net.minecraft.client.renderer.model.IBakedModel;
 import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.vector.Vector3f;
 import org.lwjgl.opengl.GL11;
 
 import javax.annotation.Nonnull;
