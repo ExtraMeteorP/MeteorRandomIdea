@@ -75,6 +75,30 @@ public class ModEntities {
             .setShouldReceiveVelocityUpdates(true)
             .build("");
 
+    public static final EntityType<EntityFlamescionUlt> ULT = EntityType.Builder.<EntityFlamescionUlt>create(
+            EntityFlamescionUlt::new, EntityClassification.MISC)
+            .size(0.1F, 0.1F)
+            .setUpdateInterval(10)
+            .setTrackingRange(64)
+            .setShouldReceiveVelocityUpdates(true)
+            .build("");
+
+    public static final EntityType<EntityFlamescionVoid> VOID = EntityType.Builder.<EntityFlamescionVoid>create(
+            EntityFlamescionVoid::new, EntityClassification.MISC)
+            .size(0.1F, 0.1F)
+            .setUpdateInterval(10)
+            .setTrackingRange(64)
+            .setShouldReceiveVelocityUpdates(true)
+            .build("");
+
+    public static final EntityType<EntityFlamescionSword> SWORD = EntityType.Builder.<EntityFlamescionSword>create(
+            EntityFlamescionSword::new, EntityClassification.MISC)
+            .size(0.1F, 0.1F)
+            .setUpdateInterval(10)
+            .setTrackingRange(64)
+            .setShouldReceiveVelocityUpdates(true)
+            .build("");
+
     public static void registerEntities(RegistryEvent.Register<EntityType<?>> evt) {
         IForgeRegistry<EntityType<?>> r = evt.getRegistry();
         register(r, LibEntityNames.KEYOFTRUTH, KEY_OF_TRUTH);
@@ -85,6 +109,9 @@ public class ModEntities {
         register(r, LibEntityNames.FLAMESCIONSLASH, FLAMESCIONSLASH);
         register(r, LibEntityNames.STRENGTHENSLASH, SRENGTHENSLASH);
         register(r, LibEntityNames.PAIMON, PAIMON);
+        register(r, LibEntityNames.FLAMESCIONULT, ULT);
+        register(r, LibEntityNames.FLAMESCIONSWORD, SWORD);
+        register(r, LibEntityNames.VOID, VOID);
     }
 
     public static <V extends IForgeRegistryEntry<V>> void register(IForgeRegistry<V> reg, ResourceLocation name, IForgeRegistryEntry<V> thing) {

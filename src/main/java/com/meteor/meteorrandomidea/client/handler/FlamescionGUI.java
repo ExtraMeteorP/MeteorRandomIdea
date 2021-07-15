@@ -21,8 +21,10 @@ public class FlamescionGUI extends AbstractGui {
     private final Minecraft minecraft;
     private final ResourceLocation HUD = new ResourceLocation(LibMisc.MOD_ID, "textures/gui/flamescionhud.png");
     private MatrixStack ms;
+    private int offset;
 
-    public FlamescionGUI(MatrixStack ms) {
+    public FlamescionGUI(MatrixStack ms, int offset) {
+        this.offset = offset;
         this.ms = ms;
         this.width = Minecraft.getInstance().getMainWindow().getScaledWidth();
         this.height = Minecraft.getInstance().getMainWindow().getScaledHeight();
@@ -32,23 +34,19 @@ public class FlamescionGUI extends AbstractGui {
     public void render() {
         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
         this.minecraft.getTextureManager().bindTexture(HUD);
-        PlayerEntity player = minecraft.player;
-        Entity riding = player.getRidingEntity();
-        if(riding == null && player.getHeldItemMainhand() != null && player.getHeldItemMainhand().getItem() == FlamescionHandler.getFlamescionWeapon()){
-            LazyOptional<IFlamescion> cap = this.minecraft.player.getCapability(CapabilityHandler.FLAMESCION_CAPABILITY);
-            cap.ifPresent((c) -> {
-                int energy = c.getEnergy();
-                boolean overloaded = c.isOverloaded();
-                renderBar(energy, overloaded);
-            });
-        }
+        LazyOptional<IFlamescion> cap = this.minecraft.player.getCapability(CapabilityHandler.FLAMESCION_CAPABILITY);
+        cap.ifPresent((c) -> {
+            int energy = c.getEnergy();
+            boolean overloaded = c.isOverloaded();
+            renderBar(energy, overloaded);
+        });
     }
 
     private void renderBar(int energy, boolean overloaded) {
         Minecraft mc = Minecraft.getInstance();
         int width = 64;
         int x = mc.getMainWindow().getScaledWidth() / 2 - width / 2;
-        int y = mc.getMainWindow().getScaledHeight() - 56;
+        int y = mc.getMainWindow().getScaledHeight() - 56 - offset;
 
         width *= (double) energy / FlamescionHandler.MAX_FLAMESCION_ENERGY;
         mc.textureManager.bindTexture(HUD);

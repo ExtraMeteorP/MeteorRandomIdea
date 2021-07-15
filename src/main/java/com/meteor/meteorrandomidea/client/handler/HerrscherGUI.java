@@ -17,8 +17,10 @@ public class HerrscherGUI extends AbstractGui {
     private final Minecraft minecraft;
     private final ResourceLocation HUD = new ResourceLocation(LibMisc.MOD_ID, "textures/gui/hud.png");
     private MatrixStack ms;
+    private int offset;
 
-    public HerrscherGUI(MatrixStack ms) {
+    public HerrscherGUI(MatrixStack ms, int offset) {
+        this.offset = offset;
         this.ms = ms;
         this.width = Minecraft.getInstance().getMainWindow().getScaledWidth();
         this.height = Minecraft.getInstance().getMainWindow().getScaledHeight();
@@ -39,7 +41,7 @@ public class HerrscherGUI extends AbstractGui {
         Minecraft mc = Minecraft.getInstance();
         int width = 64;
         int x = mc.getMainWindow().getScaledWidth() / 2 - width / 2;
-        int y = mc.getMainWindow().getScaledHeight() - 49;
+        int y = mc.getMainWindow().getScaledHeight() - 56 - offset;
 
         width *= (double) energy / 600D;
         mc.textureManager.bindTexture(HUD);

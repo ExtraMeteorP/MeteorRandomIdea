@@ -85,12 +85,12 @@ public class EntityUfo extends BoatEntity {
 
     @Override
     public double getMountedYOffset() {
-        return -0.395D;
+        return 1-0.395D;
     }
 
 
     public Item getItemBoat() {
-        return ModItems.motor;
+        return ModItems.cosmiccarkey;
     }
 
     @Override

@@ -27,7 +27,7 @@ public class RenderUfo extends EntityRenderer<EntityUfo> {
     @Override
     public void render(EntityUfo entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn) {
         matrixStackIn.push();
-        matrixStackIn.translate(0.0D, 1.500D, 0.0D);
+        matrixStackIn.translate(0.0D, 2.500D, 0.0D);
         matrixStackIn.rotate(Vector3f.YP.rotationDegrees(180.0F - entityYaw));
         matrixStackIn.rotate(Vector3f.ZP.rotationDegrees(entityIn.getRotation()));
         matrixStackIn.rotate(Vector3f.XP.rotationDegrees(entityIn.getPitch()));

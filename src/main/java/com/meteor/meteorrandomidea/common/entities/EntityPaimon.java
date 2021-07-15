@@ -1,5 +1,6 @@
 package com.meteor.meteorrandomidea.common.entities;
 
+import com.meteor.meteorrandomidea.common.core.ConfigHandler;
 import com.meteor.meteorrandomidea.common.core.EquipmentHandler;
 import com.meteor.meteorrandomidea.common.core.ModSounds;
 import com.meteor.meteorrandomidea.common.items.ModItems;
@@ -85,6 +86,8 @@ public class EntityPaimon extends ThrowableEntity {
 
         super.tick();
 
+        this.extinguish();
+
         if(getAnimation() > 0){
             setAnimation(getAnimation()-1);
             if(getAnimation() <= MAX_ANIMATION_TICKS) {
@@ -161,7 +164,7 @@ public class EntityPaimon extends ThrowableEntity {
         if(getVoiceCD() == 0){
             if(!world.isRemote)
                 randomSound(world.rand.nextInt(10)+1);
-            setVoiceCD((int) (600 + Math.random()*300));
+            setVoiceCD((int) (ConfigHandler.COMMON.soundInterval.get() + Math.random()*300));
             setTPCD(200);
         }
 

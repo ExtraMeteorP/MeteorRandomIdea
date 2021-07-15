@@ -17,8 +17,10 @@ public class MotorGUI extends AbstractGui {
     private final Minecraft minecraft;
     private final ResourceLocation HUD = new ResourceLocation(LibMisc.MOD_ID, "textures/gui/motorhud.png");
     private MatrixStack ms;
+    private int offset;
 
-    public MotorGUI(MatrixStack ms) {
+    public MotorGUI(MatrixStack ms, int offset) {
+        this.offset = offset;
         this.ms = ms;
         this.width = Minecraft.getInstance().getMainWindow().getScaledWidth();
         this.height = Minecraft.getInstance().getMainWindow().getScaledHeight();
@@ -42,7 +44,7 @@ public class MotorGUI extends AbstractGui {
         Minecraft mc = Minecraft.getInstance();
         int width = 64;
         int x = mc.getMainWindow().getScaledWidth() / 2 - width / 2;
-        int y = mc.getMainWindow().getScaledHeight() - 56;
+        int y = mc.getMainWindow().getScaledHeight() - 56 - offset;
 
         width *= (double) energy / 800D;
         mc.textureManager.bindTexture(HUD);

@@ -1,13 +1,21 @@
 {
 	"itemGroup.meteorrandomidea": "Meteor's Random Idea",
 	
+	"effect.meteorrandomidea.flamescion":"Flamescion Strength",
+	"effect.meteorrandomidea.timelock":"Time Lock",
+	"effect.meteorrandomidea.incandescence":"Incandesence Mode",
+	
 	"item.meteorrandomidea.firstfractal":"First Fractal",
 	"item.meteorrandomidea.cosmiccarkey":"Cosmic Car Key",
 	"item.meteorrandomidea.gemofconquest":"Gem of Conquest",
 	"item.meteorrandomidea.motor":"Armored Motor",
 	"item.meteorrandomidea.paimonmedal":"Paimon Medal",
+	"item.meteorrandomidea.flamescionweapon":"Key of Flamescion",
 	
 	"meteorrandomidea.paimonmedalinfo":"Emergency Food...?",
+	
+	"meteorrandomidea.root.title":"Welcome to The World",
+	"meteorrandomidea.root.desc":"May all the beauty be blessed",
 	
 	"meteorrandomidea.subtitle.cyclone":"Armored Motor：Charged Attack",
 	"meteorrandomidea.subtitle.shoot":"Armored Motor：The Key of Truth",
@@ -36,7 +44,18 @@
 	"meteorrandomidea.subtitle.paimon_vanish_6":"Paimon's Vanishment",
 	"meteorrandomidea.subtitle.paimon_tp_0":"Paimon's Teleport",
 	"meteorrandomidea.subtitle.paimon_tp_1":"Paimon's Teleport",
-	"meteorrandomidea.subtitle.paimon_tp_2":"Paimon's Teleport"
+	"meteorrandomidea.subtitle.paimon_tp_2":"Paimon's Teleport",
 
+	"mri.ult0":"火火火火火火光光光光光光光",
+    "mri.ult1":"火红红红红红火火光光光光光",
+    "mri.ult2":"光火红红红红红红火光光光光",
+    "mri.ult3":"光光火红红红红红红火光光光",
+    "mri.ult4":"光光光火红红红红红红火光光",
+    "mri.ult5":"光光光光火红红红红红红火光",
+    "mri.ult6":"光光光光光火红红红红红红火",
+    "mri.ult7":"光光光光光光火火火火火火火",
+	
+	"mri.sword":"剑气",
+	"mri.void":"黑洞"
 
 }

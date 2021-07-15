@@ -11,5 +11,7 @@ public class LibEntityNames {
     public static final String STRENGTHENSLASH = "strengthenslash";
     public static final String PAIMON = "paimon";
     public static final String VOID = "void";
+    public static final String FLAMESCIONSWORD = "flamescionsword";
+    public static final String FLAMESCIONULT = "flamescionult";
 
 }

@@ -26,7 +26,7 @@ import java.util.List;
 public class EntityFlamescionSlash extends Entity {
 
     private PlayerEntity owner;
-    private float damage = 5F;
+    private float damage = 1F;
 
     private static final String TAG_ROTATION = "rotation";
     private static final String TAG_PITCH = "pitch";

@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "meteorrandomidea:paimonmedal"
+    },
+    "title": {
+      "translate": "meteorrandomidea.root.title"
+    },
+    "description": {
+      "translate": "meteorrandomidea.root.desc"
+    },
+    "background": "minecraft:textures/block/dirt.png",
+    "show_toast": false,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "flower": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "meteorrandomidea:paimonmedal"
+          }
+        ]
+      }
+    }
+  }
+}

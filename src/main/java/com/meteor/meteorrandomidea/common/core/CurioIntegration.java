@@ -25,7 +25,7 @@ import java.util.function.Predicate;
 public class CurioIntegration extends EquipmentHandler{
 
     public static void sendImc(InterModEnqueueEvent evt) {
-        InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.CHARM.getMessageBuilder().build());
+        InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.CHARM.getMessageBuilder().size(2).build());
     }
 
     @Override

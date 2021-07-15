@@ -1,10 +1,7 @@
 package com.meteor.meteorrandomidea.common.network;
 
 import com.meteor.meteorrandomidea.common.libs.LibMisc;
-import com.meteor.meteorrandomidea.common.network.flamescion.FlamescionQPack;
-import com.meteor.meteorrandomidea.common.network.flamescion.FlamescionShiftPack;
-import com.meteor.meteorrandomidea.common.network.flamescion.FlamescionStateUpdatePack;
-import com.meteor.meteorrandomidea.common.network.flamescion.FlamescionStrengthenPack;
+import com.meteor.meteorrandomidea.common.network.flamescion.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -109,6 +106,14 @@ public class NetworkHandler {
                 FlamescionStrengthenPack::toBytes,
                 FlamescionStrengthenPack::new,
                 FlamescionStrengthenPack::handler
+        );
+
+        INSTANCE.registerMessage(
+                nextID(),
+                FlamescionLeftClickPack.class,
+                FlamescionLeftClickPack::toBytes,
+                FlamescionLeftClickPack::new,
+                FlamescionLeftClickPack::handler
         );
     }
 

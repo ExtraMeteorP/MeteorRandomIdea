@@ -1,13 +1,21 @@
 {
 	"itemGroup.meteorrandomidea": "流年年的随想",
 	
+	"effect.meteorrandomidea.flamescion":"薪炎强化",
+	"effect.meteorrandomidea.timelock":"时空锁定",
+	"effect.meteorrandomidea.incandescence":"灼热模式",
+	
 	"item.meteorrandomidea.firstfractal":"最初分型",
 	"item.meteorrandomidea.cosmiccarkey":"宇宙车钥匙",
 	"item.meteorrandomidea.gemofconquest":"征服宝石",
 	"item.meteorrandomidea.motor":"重装摩托",
 	"item.meteorrandomidea.paimonmedal":"派蒙勋章",
+	"item.meteorrandomidea.flamescionweapon":"焢煌之境:劫炎永燎",
 	
 	"meteorrandomidea.paimonmedalinfo":"异世相遇，尽享美味",
+	
+	"meteorrandomidea.root.title":"欢迎来到世界",
+	"meteorrandomidea.root.desc":"愿所有美好得到祝福",
 	
 	"meteorrandomidea.subtitle.cyclone":"重装摩托：蓄力攻击",
 	"meteorrandomidea.subtitle.shoot":"重装摩托：真理之钥",
@@ -36,6 +44,18 @@
 	"meteorrandomidea.subtitle.paimon_vanish_6":"派蒙消失",
 	"meteorrandomidea.subtitle.paimon_tp_0":"派蒙传送",
 	"meteorrandomidea.subtitle.paimon_tp_1":"派蒙传送",
-	"meteorrandomidea.subtitle.paimon_tp_2":"派蒙传送"
+	"meteorrandomidea.subtitle.paimon_tp_2":"派蒙传送",
+	
+	"mri.ult0":"火火火火火火光光光光光光光",
+    "mri.ult1":"火红红红红红火火光光光光光",
+    "mri.ult2":"光火红红红红红红火光光光光",
+    "mri.ult3":"光光火红红红红红红火光光光",
+    "mri.ult4":"光光光火红红红红红红火光光",
+    "mri.ult5":"光光光光火红红红红红红火光",
+    "mri.ult6":"光光光光光火红红红红红红火",
+    "mri.ult7":"光光光光光光火火火火火火火",
+	
+	"mri.sword":"剑气",
+	"mri.void":"黑洞"
 
 }
