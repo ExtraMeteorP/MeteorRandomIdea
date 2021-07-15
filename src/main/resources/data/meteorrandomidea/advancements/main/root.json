@@ -9,9 +9,7 @@
     "description": {
       "translate": "meteorrandomidea.root.desc"
     },
-    "background": "minecraft:textures/block/dirt.png",
-    "show_toast": false,
-    "announce_to_chat": false
+    "background": "minecraft:textures/block/dirt.png"
   },
   "criteria": {
     "flower": {
@@ -19,7 +17,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "meteorrandomidea:paimonmedal"
+            "item": "meteorrandomidea:paimonmedal"
           }
         ]
       }

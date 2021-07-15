@@ -22,6 +22,14 @@
 	"meteorrandomidea.subtitle.rideon":"Armored Motor：Ride On",
 
 	"meteorrandomidea.subtitle.slash":"Slash",
+	"meteorrandomidea.subtitle.flamescionult":"薪炎王剑的凯旋",
+	
+	"death.attack.hoi-ice.player": "%1$s被%2$s用冰霜之力打败了",
+	"death.attack.hoi-thunder.player": "%1$s被%2$s用雷电之力打败了",
+	"death.attack.hoi-flame.player": "%1$s被%2$s用薪炎之力打败了",
+	"death.attack.hoi-ice": "%1$s被冰霜之力吞噬了",
+	"death.attack.hoi-thunder": "%1$s被雷电之力吞噬了",
+	"death.attack.hoi-flame": "%1$s被薪炎燃尽了",
 	
 	"meteorrandomidea.subtitle.paimon_0":"Paimon's Arrival",
 	"meteorrandomidea.subtitle.paimon_spawn_0":"Paimon's Arrival",

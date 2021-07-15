@@ -9,6 +9,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ThrowableEntity;
+import net.minecraft.item.Food;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.datasync.DataParameter;
@@ -139,6 +140,13 @@ public class EntityPaimon extends ThrowableEntity {
         Vector3d playerPos = player.getPositionVec();
         Vector3d lookVec = new Vector3d(player.getLookVec().x, 0, player.getLookVec().z).normalize().rotateYaw((float) Math.toRadians(30D)).inverse().scale(1.1D);
         Vector3d targetPos = playerPos.add(lookVec.x, lookVec.y, lookVec.z).add(0, 1.2D, 0);
+
+        if(player.getHeldItemMainhand().getItem().isFood()){
+            targetPos = playerPos.add(player.getLookVec().x, 1.2D, player.getLookVec().z);
+        }else if(player.getHeldItemOffhand().getItem().isFood()){
+            lookVec = lookVec.inverse();
+            targetPos = playerPos.add(lookVec.x, lookVec.y, lookVec.z).add(0, 1.2D, 0);
+        }
 
         if(this.getPositionVec().distanceTo(targetPos) >= 16)
             tooFarTicks++;
@@ -319,7 +327,7 @@ public class EntityPaimon extends ThrowableEntity {
     }
 
     public boolean posEqual(Vector3d v1, Vector3d v2){
-        return v1.distanceTo(v2) <= 0.25D;
+        return v1.distanceTo(v2) <= 0.5D;
     }
 
     @Override

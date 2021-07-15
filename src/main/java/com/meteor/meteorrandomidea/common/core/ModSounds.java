@@ -34,6 +34,7 @@ public class ModSounds {
     public static final SoundEvent paimon_vanish_4 = makeSoundEvent("paimon_vanish_4");
     public static final SoundEvent paimon_vanish_5 = makeSoundEvent("paimon_vanish_5");
     public static final SoundEvent paimon_vanish_6 = makeSoundEvent("paimon_vanish_6");
+    public static final SoundEvent flamescionult = makeSoundEvent("flamescionult");
 
     private static SoundEvent makeSoundEvent(String name) {
         ResourceLocation loc = new ResourceLocation(LibMisc.MOD_ID, name);
@@ -68,6 +69,7 @@ public class ModSounds {
         r.register(paimon_vanish_4);
         r.register(paimon_vanish_5);
         r.register(paimon_vanish_6);
+        r.register(flamescionult);
     }
 
     private ModSounds() {}

@@ -3,6 +3,7 @@
 	"shoot": { "sounds":["meteorrandomidea:shoot"], "subtitle": "meteorrandomidea.subtitle.shoot" },
 	"slash": { "sounds":["meteorrandomidea:slash"], "subtitle": "meteorrandomidea.subtitle.slash" },
 	"rideon": { "sounds":["meteorrandomidea:rideon"], "subtitle": "meteorrandomidea.subtitle.rideon" },
+	"flamescionult": { "sounds":["meteorrandomidea:flamescionult"], "subtitle": "meteorrandomidea.subtitle.flamescionult" },
 	"paimon_0": { "sounds":["meteorrandomidea:paimon_0"], "subtitle": "meteorrandomidea.subtitle.paimon_0" },
 	"paimon_1": { "sounds":["meteorrandomidea:paimon_1"], "subtitle": "meteorrandomidea.subtitle.paimon_1" },
 	"paimon_2": { "sounds":["meteorrandomidea:paimon_2"], "subtitle": "meteorrandomidea.subtitle.paimon_2" },

@@ -43,7 +43,7 @@ public class EntitySlash extends Entity {
         super.tick();
 
         if(this.ticksExisted == 1){
-            world.playSound(getPosX(), getPosY(), getPosZ(), ModSounds.slash, SoundCategory.PLAYERS, 1.4F, 1.0F, true);
+            this.playSound(ModSounds.slash, 1.2F, 1.0F);
         }
 
         for(LivingEntity entity : getEntitiesAround()){

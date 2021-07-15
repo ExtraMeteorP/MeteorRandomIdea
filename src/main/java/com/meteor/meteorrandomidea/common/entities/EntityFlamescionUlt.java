@@ -1,5 +1,6 @@
 package com.meteor.meteorrandomidea.common.entities;
 
+import com.meteor.meteorrandomidea.common.core.ModSounds;
 import com.meteor.meteorrandomidea.common.handler.FlamescionHandler;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -7,6 +8,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.IPacket;
+import net.minecraft.particles.ParticleTypes;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -31,11 +33,23 @@ public class EntityFlamescionUlt extends Entity {
     @Override
     public void tick(){
         super.tick();
-        if(this.ticksExisted == 10 || this.ticksExisted == 30){
+        if(this.ticksExisted == 1 && !world.isRemote)
+            this.playSound(ModSounds.flamescionult, 1F, 1F);
+
+        if(this.ticksExisted == 10 || this.ticksExisted == 35 || this.ticksExisted == 60){
             damageAllAround(damage);
         }
 
-        if(this.ticksExisted >= 40)
+        if(this.ticksExisted >= 40) {
+            if(world.isRemote)
+                world.addParticle(ParticleTypes.EXPLOSION,
+                        getPosX() - 2D + Math.random() * 4D,
+                        getPosY() - 2D + Math.random() * 4D,
+                        getPosZ() - 2D + Math.random() * 4D,
+                        0, 0, 0);
+        }
+
+        if(this.ticksExisted >= 85)
             remove();
     }
 
