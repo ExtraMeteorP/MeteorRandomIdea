@@ -304,6 +304,9 @@ public class EntityPaimon extends ThrowableEntity {
             case 2:
                 this.playSound(ModSounds.paimon_tp_2, getSoundVolume(), 1F);
                 break;
+            case 3:
+                this.playSound(ModSounds.paimon_tp_3, getSoundVolume(), 1F);
+                break;
         }
     }
 
@@ -338,6 +341,15 @@ public class EntityPaimon extends ThrowableEntity {
                 break;
             case 10:
                 this.playSound(ModSounds.paimon_10, getSoundVolume(), 1F);
+                break;
+            case 11:
+                this.playSound(ModSounds.paimon_11, getSoundVolume(), 1F);
+                break;
+            case 12:
+                this.playSound(ModSounds.paimon_12, getSoundVolume(), 1F);
+                break;
+            case 13:
+                this.playSound(ModSounds.paimon_13, getSoundVolume(), 1F);
                 break;
         }
     }
