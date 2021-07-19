@@ -73,13 +73,17 @@ public class ItemPaimonMedal extends ItemBauble {
         }
     }
 
+    public float getSoundVolume(){
+        return 0.2F;
+    }
+
     public void randomSpawnSound(Entity entity, int i){
         switch (i){
             case 0:
-                entity.playSound(ModSounds.paimon_spawn_0, 1F, 1F);
+                entity.playSound(ModSounds.paimon_spawn_0, getSoundVolume(), 1F);
                 break;
             case 1:
-                entity.playSound(ModSounds.paimon_0, 1F, 1F);
+                entity.playSound(ModSounds.paimon_0, getSoundVolume(), 1F);
                 break;
         }
     }

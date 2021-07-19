@@ -201,7 +201,7 @@ public class EntityMotor extends BoatEntity {
                 if(this.getCycloneTicks() == 0 && this.ctrlInputDown && this.getTectonicEnergy() >= 400){
                     this.setCycloneTicks(15);
                     this.setTectonicEnergy(this.getTectonicEnergy() - 400);
-                    world.playSound(getPosX(), getPosY(), getPosZ(), ModSounds.cyclone, SoundCategory.PLAYERS, 1.4F, 1F, true);
+                    world.playSound(getPosX(), getPosY(), getPosZ(), ModSounds.cyclone, SoundCategory.PLAYERS, 1.2F, 1F, true);
 
                 }
 
@@ -382,6 +382,8 @@ public class EntityMotor extends BoatEntity {
             return ActionResultType.PASS;
         } else if (this.outOfControlTicks < 60.0F) {
             if (!this.world.isRemote) {
+                if(player.startRiding(this))
+                    world.playSound(getPosX(), getPosY(), getPosZ(), ModSounds.rideon, SoundCategory.PLAYERS, 4F, 1F, true);
                 return player.startRiding(this) ? ActionResultType.CONSUME : ActionResultType.PASS;
             } else {
                 return ActionResultType.SUCCESS;

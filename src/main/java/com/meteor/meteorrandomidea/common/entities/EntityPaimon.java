@@ -9,19 +9,26 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ThrowableEntity;
-import net.minecraft.item.Food;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.particles.ParticleTypes;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.network.NetworkHooks;
 
 public class EntityPaimon extends ThrowableEntity {
+
+    private static final int TP_SOUNDS = 4;
+    private static final int RANDOM_SOUNDS = 14;
+    private static final int VANISH_SOUNDS = 7;
+    private static final int THANK_SOUNDS = 3;
 
     private static final String TAG_PITCH = "pitch";
     private static final String TAG_ROTATION = "rotation";
@@ -75,6 +82,8 @@ public class EntityPaimon extends ThrowableEntity {
         this.dataManager.register(TPCD, 0);
     }
 
+    private int changeTicks = 0;
+    private int MAX_CHANGE_TICKS = 8;
     private int stayTicks = 0;
     private int tooFarTicks = 0;
     private int i = 0;
@@ -131,7 +140,7 @@ public class EntityPaimon extends ThrowableEntity {
             if(!world.isRemote) {
                 setVoiceCD(200);
                 setTPCD(200);
-                randomVanishSound(world.rand.nextInt(7));
+                randomVanishSound(world.rand.nextInt(VANISH_SOUNDS));
             }
             remove();
             return;
@@ -159,9 +168,9 @@ public class EntityPaimon extends ThrowableEntity {
             this.setMotion(Vector3d.ZERO);
             if(getTPCD() == 0){
                 if(!world.isRemote)
-                    randomTPSound(world.rand.nextInt(3));
+                    randomTPSound(world.rand.nextInt(TP_SOUNDS));
                 setTPCD(400);
-                setVoiceCD(300);
+                setVoiceCD(getTPCD() + 300);
             }
             setAnimation(MAX_ANIMATION_TICKS);
             return;
@@ -171,9 +180,9 @@ public class EntityPaimon extends ThrowableEntity {
 
         if(getVoiceCD() == 0){
             if(!world.isRemote)
-                randomSound(world.rand.nextInt(10)+1);
-            setVoiceCD((int) (ConfigHandler.COMMON.soundInterval.get() + Math.random()*300));
-            setTPCD(200);
+                randomSound(world.rand.nextInt(RANDOM_SOUNDS));
+            setVoiceCD((int) (ConfigHandler.COMMON.soundInterval.get() + Math.random()*400));
+            setTPCD(getTPCD() + 200);
         }
 
         if(posEqual(this.getPositionVec(), targetPos))
@@ -181,10 +190,16 @@ public class EntityPaimon extends ThrowableEntity {
         else
             stayTicks=0;
 
-        if(stayTicks >= 8 && posEqual(this.getPositionVec(), targetPos))
-            setFollowing(false);
-        else
-            setFollowing(true);
+        if(changeTicks >= MAX_CHANGE_TICKS)
+            if(stayTicks >= 8 && posEqual(this.getPositionVec(), targetPos)) {
+                setFollowing(false);
+                changeTicks = 0;
+            }else {
+                setFollowing(true);
+                changeTicks = 0;
+            }
+
+        changeTicks++;
 
         if(getFollowing()){
             Vector3d motion = new Vector3d(targetPos.x - getPosX(), targetPos.y - getPosY(), targetPos.z - getPosZ()).normalize().scale(0.22F);
@@ -203,28 +218,77 @@ public class EntityPaimon extends ThrowableEntity {
 
     }
 
+    @Override
+    public boolean canBeCollidedWith() {
+        return !this.removed;
+    }
+
+    @Override
+    public ActionResultType processInitialInteract(PlayerEntity player, Hand hand) {
+        if (!player.isSecondaryUseActive()) {
+            ItemStack stack = player.getHeldItem(hand);
+
+            if (stack.getItem().isFood()) {
+
+                if (!world.isRemote) {
+                    if (getVoiceCD() <= ConfigHandler.COMMON.soundInterval.get()) {
+                        randomThankSound(world.rand.nextInt(THANK_SOUNDS));
+                        setVoiceCD((int) (getVoiceCD() + ConfigHandler.COMMON.soundInterval.get() * 0.5));
+                    }
+                    if (!player.abilities.isCreativeMode) {
+                        stack.shrink(1);
+                    }
+                } else {
+                    for (int i = 0; i < 5; i++) {
+                        world.addParticle(ParticleTypes.HEART, getPosX() - 0.25F + 0.5F * Math.random(), getPosY() + 0.5F + 0.3F * Math.random(), getPosZ() - 0.25F + 0.5F * Math.random(), 0, 0.03F, 0);
+                    }
+                }
+                return ActionResultType.SUCCESS;
+            }
+        }
+        return ActionResultType.PASS;
+    }
+
+    public float getSoundVolume(){
+        return 0.3F;
+    }
+
+    public void randomThankSound(int i){
+        switch (i) {
+            case 0:
+                this.playSound(ModSounds.paimon_thank_0, getSoundVolume(), 1F);
+                break;
+            case 1:
+                this.playSound(ModSounds.paimon_thank_1, getSoundVolume(), 1F);
+                break;
+            case 2:
+                this.playSound(ModSounds.paimon_thank_2, getSoundVolume(), 1F);
+                break;
+        }
+    }
+
     public void randomVanishSound(int i){
         switch (i) {
             case 0:
-                this.playSound(ModSounds.paimon_vanish_0, 1F, 1F);
+                this.playSound(ModSounds.paimon_vanish_0, getSoundVolume(), 1F);
                 break;
             case 1:
-                this.playSound(ModSounds.paimon_vanish_1, 1F, 1F);
+                this.playSound(ModSounds.paimon_vanish_1, getSoundVolume(), 1F);
                 break;
             case 2:
-                this.playSound(ModSounds.paimon_vanish_2, 1F, 1F);
+                this.playSound(ModSounds.paimon_vanish_2, getSoundVolume(), 1F);
                 break;
             case 3:
-                this.playSound(ModSounds.paimon_vanish_3, 1F, 1F);
+                this.playSound(ModSounds.paimon_vanish_3, getSoundVolume(), 1F);
                 break;
             case 4:
-                this.playSound(ModSounds.paimon_vanish_4, 1F, 1F);
+                this.playSound(ModSounds.paimon_vanish_4, getSoundVolume(), 1F);
                 break;
             case 5:
-                this.playSound(ModSounds.paimon_vanish_5, 1F, 1F);
+                this.playSound(ModSounds.paimon_vanish_5, getSoundVolume(), 1F);
                 break;
             case 6:
-                this.playSound(ModSounds.paimon_vanish_6, 1F, 1F);
+                this.playSound(ModSounds.paimon_vanish_6, getSoundVolume(), 1F);
                 break;
         }
     }
@@ -232,13 +296,13 @@ public class EntityPaimon extends ThrowableEntity {
     public void randomTPSound(int i) {
         switch (i) {
             case 0:
-                this.playSound(ModSounds.paimon_tp_0, 1F, 1F);
+                this.playSound(ModSounds.paimon_tp_0, getSoundVolume(), 1F);
                 break;
             case 1:
-                this.playSound(ModSounds.paimon_tp_1, 1F, 1F);
+                this.playSound(ModSounds.paimon_tp_1, getSoundVolume(), 1F);
                 break;
             case 2:
-                this.playSound(ModSounds.paimon_tp_2, 1F, 1F);
+                this.playSound(ModSounds.paimon_tp_2, getSoundVolume(), 1F);
                 break;
         }
     }
@@ -246,34 +310,34 @@ public class EntityPaimon extends ThrowableEntity {
     public void randomSound(int i){
         switch(i){
             case 1:
-                this.playSound(ModSounds.paimon_1, 1F, 1F);
+                this.playSound(ModSounds.paimon_1, getSoundVolume(), 1F);
                 break;
             case 2:
-                this.playSound(ModSounds.paimon_2, 1F, 1F);
+                this.playSound(ModSounds.paimon_2, getSoundVolume(), 1F);
                 break;
             case 3:
-                this.playSound(ModSounds.paimon_3, 1F, 1F);
+                this.playSound(ModSounds.paimon_3, getSoundVolume(), 1F);
                 break;
             case 4:
-                this.playSound(ModSounds.paimon_4, 1F, 1F);
+                this.playSound(ModSounds.paimon_4, getSoundVolume(), 1F);
                 break;
             case 5:
-                this.playSound(ModSounds.paimon_5, 1F, 1F);
+                this.playSound(ModSounds.paimon_5, getSoundVolume(), 1F);
                 break;
             case 6:
-                this.playSound(ModSounds.paimon_6, 1F, 1F);
+                this.playSound(ModSounds.paimon_6, getSoundVolume(), 1F);
                 break;
             case 7:
-                this.playSound(ModSounds.paimon_7, 1F, 1F);
+                this.playSound(ModSounds.paimon_7, getSoundVolume(), 1F);
                 break;
             case 8:
-                this.playSound(ModSounds.paimon_8, 1F, 1F);
+                this.playSound(ModSounds.paimon_8, getSoundVolume(), 1F);
                 break;
             case 9:
-                this.playSound(ModSounds.paimon_9, 1F, 1F);
+                this.playSound(ModSounds.paimon_9, getSoundVolume(), 1F);
                 break;
             case 10:
-                this.playSound(ModSounds.paimon_10, 1F, 1F);
+                this.playSound(ModSounds.paimon_10, getSoundVolume(), 1F);
                 break;
         }
     }
