@@ -12,6 +12,8 @@ import net.minecraft.item.Rarity;
 import net.minecraft.item.SwordItem;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
@@ -38,7 +40,7 @@ public class ItemFirstFractal extends SwordItem {
     }
 
     public void leftClickBlock(PlayerInteractEvent.LeftClickBlock evt) {
-        if (!evt.getItemStack().isEmpty() && evt.getItemStack().getItem() == this) {
+        if (evt.getPlayer().world.isRemote && !evt.getItemStack().isEmpty() && evt.getItemStack().getItem() == this) {
             NetworkHandler.INSTANCE.sendToServer(new FractalLeftClickPack());
         }
     }

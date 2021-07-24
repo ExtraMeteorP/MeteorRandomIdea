@@ -22,6 +22,8 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
@@ -54,7 +56,7 @@ public class ItemFlamescionWeapon extends SwordItem {
 
     @SubscribeEvent
     public void leftClickBlock(PlayerInteractEvent.LeftClickBlock evt) {
-        if (!evt.getItemStack().isEmpty() && evt.getItemStack().getItem() == this) {
+        if (evt.getPlayer().world.isRemote && !evt.getItemStack().isEmpty() && evt.getItemStack().getItem() == this) {
             NetworkHandler.INSTANCE.sendToServer(new FlamescionStrengthenPack());
         }
     }

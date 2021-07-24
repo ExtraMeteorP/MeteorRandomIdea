@@ -9,6 +9,14 @@ public class LibItemNames {
     public static final String FLAMESCIONWEAPON = "flamescionweapon";
     public static final String PAIMONMEDAL = "paimonmedal";
 
+    public static final String FOX_EAR = "foxear";
+    public static final String FOX_MASK = "foxmask";
+    public static final String THUG_LIFE = "thuglife";
+    public static final String SUPER_CROWN = "supercrown";
+    public static final String RED_SCARF = "redscarf";
+    public static final String PYLON = "pylon";
+    public static final String BLACK_GLASSES = "blackglasses";
+
     public static final String ARMOR_MAID_HELM = "maid_helm";
     public static final String ARMOR_MAID_CHEST = "maid_chest";
     public static final String ARMOR_MAID_LEGS = "maid_legs";

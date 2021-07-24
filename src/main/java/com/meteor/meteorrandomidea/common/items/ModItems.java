@@ -23,6 +23,14 @@ public class ModItems {
     public static final Item flamescionweapon = new ItemFlamescionWeapon();
     public static final Item paimonmedal = new ItemPaimonMedal();
 
+    public static final Item foxear = new ItemBaubleCosmetic(ItemBaubleCosmetic.Variant.FOX_EAR, unstackable());
+    public static final Item foxmask = new ItemBaubleCosmetic(ItemBaubleCosmetic.Variant.FOX_MASK, unstackable());
+    public static final Item blackglasses = new ItemBaubleCosmetic(ItemBaubleCosmetic.Variant.BLACK_GLASSES, unstackable());
+    public static final Item thuglife = new ItemBaubleCosmetic(ItemBaubleCosmetic.Variant.THUG_LIFE, unstackable());
+    public static final Item redscarf = new ItemBaubleCosmetic(ItemBaubleCosmetic.Variant.RED_SCARF, unstackable());
+    public static final Item supercrown = new ItemBaubleCosmetic(ItemBaubleCosmetic.Variant.SUPER_CROWN, unstackable());
+    public static final Item pylon = new ItemBaubleCosmetic(ItemBaubleCosmetic.Variant.PYLON, unstackable());
+
     public static final Item armor_maid_helm = new ItemMaidArmor(EquipmentSlotType.HEAD, unstackable());
     public static final Item armor_maid_chest = new ItemMaidArmor(EquipmentSlotType.CHEST, unstackable());
     public static final Item armor_maid_legs = new ItemMaidArmor(EquipmentSlotType.LEGS, unstackable());
@@ -59,6 +67,14 @@ public class ModItems {
         register(r, LibItemNames.COSMICCARKEY, cosmiccarkey);
         register(r, LibItemNames.FLAMESCIONWEAPON, flamescionweapon);
         register(r, LibItemNames.PAIMONMEDAL, paimonmedal);
+
+        register(r, LibItemNames.FOX_EAR, foxear);
+        register(r, LibItemNames.FOX_MASK, foxmask);
+        register(r, LibItemNames.PYLON, pylon);
+        register(r, LibItemNames.BLACK_GLASSES, blackglasses);
+        register(r, LibItemNames.RED_SCARF, redscarf);
+        register(r, LibItemNames.THUG_LIFE, thuglife);
+        register(r, LibItemNames.SUPER_CROWN, supercrown);
 
         register(r, LibItemNames.ARMOR_MAID_HELM, armor_maid_helm);
         register(r, LibItemNames.ARMOR_MAID_CHEST, armor_maid_chest);
