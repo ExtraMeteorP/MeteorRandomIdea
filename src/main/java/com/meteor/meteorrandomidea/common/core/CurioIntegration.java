@@ -3,11 +3,20 @@ package com.meteor.meteorrandomidea.common.core;
 import com.google.common.collect.Multimap;
 import com.meteor.meteorrandomidea.common.capability.SimpleCapProvider;
 import com.meteor.meteorrandomidea.common.items.ItemBauble;
+import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.IRenderTypeBuffer;
+import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.minecraft.client.renderer.entity.IEntityRenderer;
+import net.minecraft.client.renderer.entity.model.BipedModel;
+import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.fml.InterModComms;
@@ -26,6 +35,8 @@ public class CurioIntegration extends EquipmentHandler{
 
     public static void sendImc(InterModEnqueueEvent evt) {
         InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.CHARM.getMessageBuilder().size(2).build());
+        InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.BODY.getMessageBuilder().build());
+        InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.HEAD.getMessageBuilder().build());
     }
 
     @Override
@@ -101,6 +112,27 @@ public class CurioIntegration extends EquipmentHandler{
         @Override
         public boolean canRightClickEquip() {
             return true;
+        }
+
+        @Override
+        public boolean canRender(String identifier, int index, LivingEntity entity) {
+            return getItem().hasRender(stack, entity);
+        }
+
+        @Override
+        @OnlyIn(Dist.CLIENT)
+        public void render(String identifier, int index, MatrixStack matrixStack, IRenderTypeBuffer renderTypeBuffer, int light, LivingEntity livingEntity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+            EntityRenderer<?> renderer = Minecraft.getInstance().getRenderManager().getRenderer(livingEntity);
+            if (!(renderer instanceof IEntityRenderer<?, ?>)) {
+                return;
+            }
+            EntityModel<?> model = ((IEntityRenderer<?, ?>) renderer).getEntityModel();
+            if (!(model instanceof BipedModel<?>)) {
+                return;
+            }
+
+            getItem().doRender((BipedModel<?>) model, stack, livingEntity, matrixStack, renderTypeBuffer, light, limbSwing, limbSwingAmount, partialTicks, ageInTicks, netHeadYaw, headPitch);
+
         }
 
     }

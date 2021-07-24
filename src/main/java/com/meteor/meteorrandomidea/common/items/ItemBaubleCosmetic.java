@@ -15,7 +15,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class ItemBaubleCosmetic extends ItemBauble {
 
     public enum Variant {
-        FOX_EAR(true), FOX_MASK(true), PYLON(true), BLACK_GLASSES(true), RED_SCARF, SUPER_CROWN(true), THUG_LIFE(true);
+        FOX_EAR(true), FOX_MASK(true), PYLON(true), BLACK_GLASSES(true), RED_SCARF, SUPER_CROWN(true), THUG_LIFE(true), MASK(true);
         private final boolean isHead;
 
         Variant(boolean isHead) {
@@ -44,47 +44,61 @@ public class ItemBaubleCosmetic extends ItemBauble {
             switch (variant) {
                 case FOX_EAR:
                     ms.push();
-                    ms.translate(-0.1, -0.3, -0.3);
-                    ms.scale(0.3F, -0.3F, -0.3F);
+                    ms.translate(0, -0.8, -0.1F);
+                    ms.scale(0.8F, -0.8F, -0.8F);
                     renderItem(stack, ms, buffers, light);
                     ms.pop();
                     break;
                 case FOX_MASK:
                     ms.push();
-                    ms.translate(-0.1, -0.3, -0.3);
-                    ms.scale(0.3F, -0.3F, -0.3F);
+                    ms.translate(0.02F, -0.3, -0.25);
+                    ms.scale(0.7F, -0.7F, -0.7F);
+                    renderItem(stack, ms, buffers, light);
+                    ms.pop();
+                    break;
+                case MASK:
+                    ms.push();
+                    ms.translate(0F, -0.3, -0.25);
+                    ms.scale(0.65F, -0.65F, -0.65F);
                     renderItem(stack, ms, buffers, light);
                     ms.pop();
                     break;
                 case BLACK_GLASSES:
                     ms.push();
-                    ms.translate(-0.1, -0.3, -0.3);
-                    ms.scale(0.3F, -0.3F, -0.3F);
+                    ms.translate(0, -0.2, -0.3);
+                    ms.scale(0.55F, 0.55F, -0.55F);
                     renderItem(stack, ms, buffers, light);
                     ms.pop();
                     break;
                 case SUPER_CROWN:
                     ms.push();
-                    ms.translate(-0.1, -0.3, -0.3);
-                    ms.scale(0.3F, -0.3F, -0.3F);
+                    ms.translate(0, -0.7, -0.1F);
+                    ms.scale(0.65F, -0.65F, -0.65F);
+                    renderItem(stack, ms, buffers, light);
+                    ms.pop();
+                    break;
+                case PYLON:
+                    ms.push();
+                    ms.translate(0, -0.8, -0.1F);
+                    ms.scale(0.5F, -0.5F, -0.5F);
                     renderItem(stack, ms, buffers, light);
                     ms.pop();
                     break;
                 case THUG_LIFE:
                     ms.push();
-                    ms.translate(-0.1, -0.3, -0.3);
-                    ms.scale(0.3F, -0.3F, -0.3F);
+                    ms.translate(0, -0.2, -0.3);
+                    ms.scale(0.7F, -0.7F, -0.7F);
                     renderItem(stack, ms, buffers, light);
                     ms.pop();
                     break;
             }
-        }else { // body cosmetics
+        }else {
             bipedModel.bipedBody.translateRotate(ms);
             switch (variant) {
                 case RED_SCARF:
                     ms.push();
-                    ms.translate(-0.1, -0.3, -0.3);
-                    ms.scale(0.3F, -0.3F, -0.3F);
+                    ms.translate(0, 0.16, -0.15);
+                    ms.scale(0.55F, -0.55F, -0.55F);
                     renderItem(stack, ms, buffers, light);
                     ms.pop();
                     break;

@@ -30,6 +30,7 @@ public class ModItems {
     public static final Item redscarf = new ItemBaubleCosmetic(ItemBaubleCosmetic.Variant.RED_SCARF, unstackable());
     public static final Item supercrown = new ItemBaubleCosmetic(ItemBaubleCosmetic.Variant.SUPER_CROWN, unstackable());
     public static final Item pylon = new ItemBaubleCosmetic(ItemBaubleCosmetic.Variant.PYLON, unstackable());
+    public static final Item mask = new ItemBaubleCosmetic(ItemBaubleCosmetic.Variant.MASK, unstackable());
 
     public static final Item armor_maid_helm = new ItemMaidArmor(EquipmentSlotType.HEAD, unstackable());
     public static final Item armor_maid_chest = new ItemMaidArmor(EquipmentSlotType.CHEST, unstackable());
@@ -75,6 +76,7 @@ public class ModItems {
         register(r, LibItemNames.RED_SCARF, redscarf);
         register(r, LibItemNames.THUG_LIFE, thuglife);
         register(r, LibItemNames.SUPER_CROWN, supercrown);
+        register(r, LibItemNames.MASK, mask);
 
         register(r, LibItemNames.ARMOR_MAID_HELM, armor_maid_helm);
         register(r, LibItemNames.ARMOR_MAID_CHEST, armor_maid_chest);

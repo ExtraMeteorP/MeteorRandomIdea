@@ -16,6 +16,7 @@ public class LibItemNames {
     public static final String RED_SCARF = "redscarf";
     public static final String PYLON = "pylon";
     public static final String BLACK_GLASSES = "blackglasses";
+    public static final String MASK = "mask";
 
     public static final String ARMOR_MAID_HELM = "maid_helm";
     public static final String ARMOR_MAID_CHEST = "maid_chest";

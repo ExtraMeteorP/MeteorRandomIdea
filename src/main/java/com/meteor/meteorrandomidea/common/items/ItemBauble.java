@@ -49,6 +49,10 @@ public abstract class ItemBauble extends Item {
         return HashMultimap.create();
     }
 
+    public boolean hasRender(ItemStack stack, LivingEntity living) {
+        return !living.isInvisible();
+    }
+
     @OnlyIn(Dist.CLIENT)
     public void doRender(BipedModel<?> bipedModel, ItemStack stack, LivingEntity player, MatrixStack ms, IRenderTypeBuffer buffers, int light, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {}
 
